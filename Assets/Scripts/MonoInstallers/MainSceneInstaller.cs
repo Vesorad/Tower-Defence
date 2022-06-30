@@ -6,7 +6,14 @@ namespace Assets.Scripts.MonoInstallers
     {
         public override void InstallBindings()
         {
+            BindSignals();
+        }
 
+        private void BindSignals()
+        {
+            SignalBusInstaller.Install(Container);
+
+            Container.DeclareSignal<Signals.BuildTowerSignal>();
         }
     }
 }
