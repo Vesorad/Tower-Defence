@@ -6,12 +6,11 @@ namespace Assets.Scripts.MonoInstallers
 {
     public class RoofInstaller : MonoInstaller
     {
-        [SerializeField] private Transform myTransform = null;
+        [SerializeField] private Settings settings = null;
 
         public override void InstallBindings()
         {
-            Container.Bind<Transform>().FromInstance(myTransform).AsSingle();
-            Container.BindInterfacesAndSelfTo<RoofController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<RoofController>().AsSingle().WithArguments(settings.MyTransform);
 
             BindSignals();
         }
@@ -19,6 +18,12 @@ namespace Assets.Scripts.MonoInstallers
         private void BindSignals()
         {
             Container.BindSignal<Signals.BuildTowerSignal>().ToMethod<RoofController>((x, s) => x.UpdatePosRoof()).FromResolve();
+        }
+
+        [System.Serializable]
+        public class Settings
+        {
+            [field: SerializeField] public Transform MyTransform { private set; get; } = null;
         }
     }
 }

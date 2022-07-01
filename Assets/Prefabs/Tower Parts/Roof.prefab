@@ -179,4 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c14b7ddfe3e8ea49ad3f37dce6ce3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTransform: {fileID: 1420053640867499781}
+  settings:
+    <MyTransform>k__BackingField: {fileID: 1420053640867499781}
