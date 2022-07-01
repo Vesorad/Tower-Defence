@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21821ae0ab55121418101e011ff89410, type: 3}
   m_Name: Main Game Settings Installer
   m_EditorClassIdentifier: 
-  <MainSceneInstaller>k__BackingField:
-    <PartTowerOnSlot>k__BackingField: {fileID: 7444975477821562942, guid: 165490bd428fdd245945dc542c4fa68e, type: 3}
+  <MainSceneSettings>k__BackingField:
+    <PartTowerOneSlot>k__BackingField:
+      <NameFolder>k__BackingField: Tower One Slot
+      <Prefab>k__BackingField: {fileID: 7444975477821562942, guid: 165490bd428fdd245945dc542c4fa68e, type: 3}
+      <PoolSize>k__BackingField: 10
   <RoofSettings>k__BackingField:
     <HighOnUpdateRoof>k__BackingField: {x: 0, y: 3, z: 0}
   <TowerSettings>k__BackingField:
