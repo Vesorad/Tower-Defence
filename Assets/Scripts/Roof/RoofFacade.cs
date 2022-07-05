@@ -1,10 +1,9 @@
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Tower
+namespace Assets.Scripts.Roof
 {
-
-    public class TowerOneSlot : MonoBehaviour, IPoolable<IMemoryPool>
+    public class RoofFacade : MonoBehaviour, IPoolable<IMemoryPool>
     {
         public void OnDespawned()
         {
@@ -16,6 +15,6 @@ namespace Assets.Scripts.Tower
 
         }
 
-        public class Factory : PlaceholderFactory<TowerOneSlot> { }
+        public class Factory : PlaceholderFactory<RoofFacade> { }
     }
 }

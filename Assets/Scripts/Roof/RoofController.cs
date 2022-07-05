@@ -1,24 +1,25 @@
 using UnityEngine;
+using Zenject;
 
 namespace Assets.Scripts.Roof
 {
     public class RoofController
     {
-        readonly Settings settings;
-        readonly Transform transform;
+        private readonly Transform transform;
+        private readonly GameManager gameManager;
 
-        public RoofController(Settings settings, Transform transform)
+        public RoofController(Settings settings, Transform transform, GameManager gameManager)
         {
-            this.settings = settings;
             this.transform = transform;
+            this.gameManager = gameManager;
         }
 
-        public void UpdatePosRoof() => transform.position += settings.HighOnUpdateRoof;
+        public void UpdatePosRoof() => transform.position = gameManager.HighRoof;
 
         [System.Serializable]
         public class Settings
         {
-            [field: SerializeField, Min(0)] public Vector3 HighOnUpdateRoof { private set; get; } = new();
+//TODO
         }
     }
 }
