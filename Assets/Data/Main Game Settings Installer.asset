@@ -12,12 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21821ae0ab55121418101e011ff89410, type: 3}
   m_Name: Main Game Settings Installer
   m_EditorClassIdentifier: 
-  <MainSceneSettings>k__BackingField:
+  <FactorySettings>k__BackingField:
+    <Roof>k__BackingField:
+      <NameFolder>k__BackingField: Roof
+      <Prefab>k__BackingField: {fileID: 9145847200521159588, guid: e0265e4d094df5b49ab6b7317f44df9c, type: 3}
+      <PoolSize>k__BackingField: 1
     <PartTowerOneSlot>k__BackingField:
       <NameFolder>k__BackingField: Tower One Slot
       <Prefab>k__BackingField: {fileID: 7444975477821562942, guid: 165490bd428fdd245945dc542c4fa68e, type: 3}
-      <PoolSize>k__BackingField: 10
-  <RoofSettings>k__BackingField:
-    <HighOnUpdateRoof>k__BackingField: {x: 0, y: 3, z: 0}
-  <TowerSettings>k__BackingField:
-    <HighOnUpdate>k__BackingField: {x: 0, y: 3, z: 0}
+      <PoolSize>k__BackingField: 20
+    <EnemyBasic>k__BackingField:
+      <NameFolder>k__BackingField: Enemy Basic
+      <Prefab>k__BackingField: {fileID: 6793374435499931297, guid: a1af6a067dcaca844af412da9b509d30, type: 3}
+      <PoolSize>k__BackingField: 100
+  <TowerBuidlingSettings>k__BackingField:
+    <StartPositionRoof>k__BackingField: {x: 0, y: -1}
+    <StartPositionTower>k__BackingField: {x: 0, y: -3}
+    <HighOnUpdateRoof>k__BackingField: {x: 0, y: 3}
+    <HighOnUpdateTower>k__BackingField: {x: 0, y: 3}
+  <EnemiesSettings>k__BackingField:
+    <EnemyBasic>k__BackingField:
+      <Health>k__BackingField: 1
+      <MovementType>k__BackingField: {fileID: 11400000, guid: 6df343a2bee14e54f92c5a61c0330e2a, type: 2}
+      <Speed>k__BackingField: 2
+      <DamageOnRoof>k__BackingField: 1

@@ -1,3 +1,4 @@
+using Assets.Scripts.MonoInstallers;
 using UnityEngine;
 using Zenject;
 
@@ -5,29 +6,29 @@ namespace Assets.Scripts.Enemies
 {
     public class Enemy : ITickable
     {
+        private readonly EnemyInstaller.Settings objectSettings;
         private readonly Settings settings;
-        private readonly Transform transform;
         private readonly GameManager gameManager;
 
-        public Enemy(Settings settings, Transform transform, GameManager gameManager)
+        public Enemy(EnemyInstaller.Settings objectSettings,Settings settings, GameManager gameManager)
         {
+            this.objectSettings = objectSettings;
             this.settings = settings;
-            this.transform = transform;
             this.gameManager = gameManager;
         }
 
         public void Tick()
         {
             Movement();
-            if (transform.position.y >= gameManager.HighRoof.y)
+            if (objectSettings.MyTransform.position.y >= gameManager.HighRoof.y)
             {
-                Debug.Log("Damage");
+                objectSettings.EnemyFacade.Die();
             }
         }
 
         public void Movement()
         {
-            settings.MovementType.Movement(settings.Speed, transform);
+            settings.MovementType.Movement(settings.Speed, objectSettings.MyTransform);
         }
 
         public void Attack()

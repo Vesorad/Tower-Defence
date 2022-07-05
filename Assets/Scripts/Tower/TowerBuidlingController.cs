@@ -8,11 +8,11 @@ namespace Assets.Scripts.Tower
     {
         private readonly Settings settings;
         private readonly RoofFacade.Factory roofFactory;
-        private readonly TowerOneSlot.Factory towerOneSlotFactory;
+        private readonly TowerOneSlotFacade.Factory towerOneSlotFactory;
 
         private Vector2 towerHigh;
 
-        public TowerBuidlingController(Settings settings, TowerOneSlot.Factory towerOneSlotFactory, RoofFacade.Factory roofFactory)
+        public TowerBuidlingController(Settings settings, TowerOneSlotFacade.Factory towerOneSlotFactory, RoofFacade.Factory roofFactory)
         {
             this.settings = settings;
             this.towerOneSlotFactory = towerOneSlotFactory;

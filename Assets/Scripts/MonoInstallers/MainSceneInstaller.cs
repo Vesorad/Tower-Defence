@@ -9,7 +9,7 @@ namespace Assets.Scripts.MonoInstallers
     {
         [Inject] private GameFactores.Settings settings = null;
 
-        private GameFactores gameFactores =new();
+        private GameFactores gameFactores = new();
 
         public override void InstallBindings()
         {
@@ -17,8 +17,7 @@ namespace Assets.Scripts.MonoInstallers
 
             BindSignals();
 
-            Transform poolsHolder = new GameObject("---POOLS---").transform;
-            gameFactores.BindFactores(Container, settings, poolsHolder);
+            gameFactores.BindFactores(Container, settings, new GameObject("---POOLS---").transform);
         }
 
         private void BindSignals()

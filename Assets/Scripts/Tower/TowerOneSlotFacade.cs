@@ -4,7 +4,7 @@ using Zenject;
 namespace Assets.Scripts.Tower
 {
 
-    public class TowerOneSlot : MonoBehaviour, IPoolable<IMemoryPool>
+    public class TowerOneSlotFacade : MonoBehaviour, IPoolable<IMemoryPool>
     {
         public void OnDespawned()
         {
@@ -16,6 +16,6 @@ namespace Assets.Scripts.Tower
 
         }
 
-        public class Factory : PlaceholderFactory<TowerOneSlot> { }
+        public class Factory : PlaceholderFactory<TowerOneSlotFacade> { }
     }
 }

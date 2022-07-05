@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 899664280152758770}
   - component: {fileID: 7046221477454919910}
-  - component: {fileID: 8285702881633095559}
+  - component: {fileID: 3337260654557093244}
   m_Layer: 0
   m_Name: Tower One Slot
   m_TagString: Untagged
@@ -163,7 +163,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8285702881633095559
+--- !u!114 &3337260654557093244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7444975477821562942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ead407b2b220904b94453bec7acef19, type: 3}
+  m_Script: {fileID: 11500000, guid: fb8fc3e6d90792f4e80671c03b9a565c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8507710745174728783

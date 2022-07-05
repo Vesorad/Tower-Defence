@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 1420053640867499781}
   - component: {fileID: 7789835617354857933}
   - component: {fileID: 7792269189728279102}
+  - component: {fileID: 2674779085481299435}
   m_Layer: 0
   m_Name: Roof
   m_TagString: Untagged
@@ -181,3 +182,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
     <MyTransform>k__BackingField: {fileID: 1420053640867499781}
+--- !u!114 &2674779085481299435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145847200521159588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c9837ea33409948abb710fdf09444d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
