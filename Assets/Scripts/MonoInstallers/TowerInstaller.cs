@@ -7,14 +7,14 @@ namespace Assets.Scripts.MonoInstallers
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<TowerController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<TowerBuidlingController>().AsSingle();
 
             BindSignals();
         }
 
         private void BindSignals()
         {
-            Container.BindSignal<Signals.BuildTowerSignal>().ToMethod<TowerController>((x, s) => x.AddNewPartTower()).FromResolve();
+            Container.BindSignal<Signals.BuildTowerSignal>().ToMethod<TowerBuidlingController>((x, s) => x.AddNewPartTower()).FromResolve();
         }
     }
 }

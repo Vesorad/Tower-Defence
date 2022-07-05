@@ -1,4 +1,5 @@
-using Assets.Scripts.Tower;
+using Assets.Scripts.Signals;
+using Assets.Scripts.Zenject;
 using UnityEngine;
 using Zenject;
 
@@ -6,33 +7,26 @@ namespace Assets.Scripts.MonoInstallers
 {
     public class MainSceneInstaller : MonoInstaller
     {
-        [Inject] private Settings settings = null;
+        [Inject] private GameFactores.Settings settings = null;
+
+        private GameFactores gameFactores =new();
 
         public override void InstallBindings()
         {
+            Container.BindInterfacesAndSelfTo<GameManager>().AsSingle();
+
             BindSignals();
-            BindFactores();
+
+            Transform poolsHolder = new GameObject("---POOLS---").transform;
+            gameFactores.BindFactores(Container, settings, poolsHolder);
         }
 
         private void BindSignals()
         {
             SignalBusInstaller.Install(Container);
 
-            Container.DeclareSignal<Signals.BuildTowerSignal>();
+            Container.DeclareSignal<BuildTowerSignal>();
+            Container.BindSignal<BuildTowerSignal>().ToMethod<GameManager>((x, s) => x.UpdateHighRoofGlobalParameter()).FromResolve();
         }
-
-        private void BindFactores()
-        {
-            Container.BindFactory<TowerOneSlot, TowerOneSlot.Factory>().FromPoolableMemoryPool<TowerOneSlot, TowerOneSlotPool>(poolBinder => poolBinder.WithInitialSize(settings.PartTowerOneSlot.PoolSize)
-                  .FromComponentInNewPrefab(settings.PartTowerOneSlot.Prefab).UnderTransformGroup(settings.PartTowerOneSlot.NameFolder));
-        }
-
-        [System.Serializable]
-        public class Settings
-        {
-            [field: SerializeField] public ObjectPool PartTowerOneSlot { private set; get; } = null;
-        }
-
-        private class TowerOneSlotPool : MonoPoolableMemoryPool<IMemoryPool, TowerOneSlot> { }
     }
 }
