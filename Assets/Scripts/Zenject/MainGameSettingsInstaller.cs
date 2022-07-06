@@ -10,6 +10,7 @@ namespace Assets.Scripts.Zenject
         [field: SerializeField] public GameFactores.Settings FactorySettings { private set; get; } = null;
         [field: SerializeField] public Roof.RoofController.Settings RoofSettings { private set; get; } = null;
         [field: SerializeField] public Tower.TowerBuidlingController.Settings TowerBuidlingSettings { private set; get; } = null;
+        [field: SerializeField] public EnemySpawner.Settings EnemySpawnerSettings { private set; get; } = null;
         [field: SerializeField] public Enemies EnemiesSettings { private set; get; } = null;
 
 
@@ -19,6 +20,7 @@ namespace Assets.Scripts.Zenject
             Container.BindInstance(RoofSettings).IfNotBound();
             Container.BindInstance(TowerBuidlingSettings).IfNotBound();
 
+            Container.BindInstance(EnemySpawnerSettings).IfNotBound();
             Container.BindInstance(EnemiesSettings.EnemyBasic).IfNotBound();
         }
 

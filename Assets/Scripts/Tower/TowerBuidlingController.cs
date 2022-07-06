@@ -32,12 +32,12 @@ namespace Assets.Scripts.Tower
         public class Settings
         {
             [field: Header("Start Parameters")]
-            [field: SerializeField] public Vector2 StartPositionRoof { private set; get; } = new();
-            [field: SerializeField] public Vector2 StartPositionTower { private set; get; } = new();
+            [field: SerializeField] public Vector2 StartPositionRoof { private set; get; } = Vector2.zero;
+            [field: SerializeField] public Vector2 StartPositionTower { private set; get; } = Vector2.zero;
 
             [field: Header("Update Parameters")]
-            [field: SerializeField, Min(0)] public Vector2 HighOnUpdateRoof { private set; get; } = new();
-            [field: SerializeField, Min(0)] public Vector2 HighOnUpdateTower { private set; get; } = new();
+            [field: SerializeField, Min(0)] public Vector2 HighOnUpdateRoof { private set; get; } = Vector2.zero;
+            [field: SerializeField, Min(0)] public Vector2 HighOnUpdateTower { private set; get; } = Vector2.zero;
         }
     }
 }
