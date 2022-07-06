@@ -30,6 +30,10 @@ MonoBehaviour:
     <StartPositionTower>k__BackingField: {x: 0, y: -3}
     <HighOnUpdateRoof>k__BackingField: {x: 0, y: 3}
     <HighOnUpdateTower>k__BackingField: {x: 0, y: 3}
+  <EnemySpawnerSettings>k__BackingField:
+    <EnemiesToSpawn>k__BackingField:
+    - {fileID: 7985916568613086106, guid: a1af6a067dcaca844af412da9b509d30, type: 3}
+    <TimeToSpawn>k__BackingField: 0.1
   <EnemiesSettings>k__BackingField:
     <EnemyBasic>k__BackingField:
       <Health>k__BackingField: 1

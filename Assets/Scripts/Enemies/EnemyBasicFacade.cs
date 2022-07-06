@@ -3,22 +3,29 @@ using Zenject;
 
 namespace Assets.Scripts.Enemies
 {
-    public class EnemyBasicFacade : MonoBehaviour, IPoolable<IMemoryPool>
+    public class EnemyBasicFacade : EnemyFacade
     {
         private IMemoryPool pool;
-        public void Die()
+        private EnemySpawner.Settings enemySpawnerSettings;
+
+        [Inject]
+        public void Construct(EnemySpawner.Settings enemySpawnerSettings)
+        {
+            this.enemySpawnerSettings = enemySpawnerSettings;
+        }
+
+        public override void Die()
         {
             Debug.Log("Zabity");
             pool.Despawn(this);
         }
 
-        public void OnDespawned() { }
-        public void OnSpawned(IMemoryPool pool)
+        public override void OnDespawned() { }
+        public override void OnSpawned(IMemoryPool pool)
         {
-            transform.position = Vector3.zero;
+            transform.position = enemySpawnerSettings.SpawnPlace;
             this.pool = pool;
         }
-
         public class Factory : PlaceholderFactory<EnemyBasicFacade> { }
     }
 }

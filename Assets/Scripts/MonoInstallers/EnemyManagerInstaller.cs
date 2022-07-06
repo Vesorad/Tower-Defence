@@ -14,7 +14,7 @@ namespace Assets.Scripts.MonoInstallers
 
         private void BindSignals()
         {
-            Container.BindSignal<Signals.BuildTowerSignal>().ToMethod<EnemySpawner>((x, s) => x.SpawnEnemy()).FromResolve();
+
         }
     }
 }
