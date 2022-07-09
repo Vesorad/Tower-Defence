@@ -15,7 +15,7 @@ namespace Assets.Scripts.Zenject
             Container.BindFactory<TowerOneSlotFacade, TowerOneSlotFacade.Factory>().FromPoolableMemoryPool<TowerOneSlotFacade, TowerOneSlotPool>(poolBinder => poolBinder.WithInitialSize(settings.PartTowerOneSlot.PoolSize)
                   .FromComponentInNewPrefab(settings.PartTowerOneSlot.Prefab).UnderTransform(CreateSubFolder(poolsHolder,settings.PartTowerOneSlot.NameFolder)));
 
-            Container.BindFactory<EnemyBasicFacade, EnemyBasicFacade.Factory>().FromPoolableMemoryPool<EnemyBasicFacade, EnemyBasicPool>(poolBinder => poolBinder.WithInitialSize(settings.EnemyBasic.PoolSize)
+            Container.BindFactory<EnemyUnitBasicFacade, EnemyUnitBasicFacade.Factory>().FromPoolableMemoryPool<EnemyUnitBasicFacade, EnemyBasicPool>(poolBinder => poolBinder.WithInitialSize(settings.EnemyBasic.PoolSize)
                   .FromComponentInNewPrefab(settings.EnemyBasic.Prefab).UnderTransform(CreateSubFolder(poolsHolder, settings.EnemyBasic.NameFolder)));
         }
 
@@ -38,6 +38,6 @@ namespace Assets.Scripts.Zenject
 
         private class RoofPool : MonoPoolableMemoryPool<IMemoryPool, RoofFacade> { }
         private class TowerOneSlotPool : MonoPoolableMemoryPool<IMemoryPool, TowerOneSlotFacade> { }
-        private class EnemyBasicPool : MonoPoolableMemoryPool<IMemoryPool, EnemyBasicFacade> { }
+        private class EnemyBasicPool : MonoPoolableMemoryPool<IMemoryPool, EnemyUnitBasicFacade> { }
     }
 }

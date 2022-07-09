@@ -4,7 +4,7 @@ using Assets.Scripts.Units.Enemy.States;
 
 namespace Assets.Scripts.Units.Enemy
 {
-    public class EnemyBasicInstaller : MonoInstaller
+    public class EnemyUnitBasicInstaller : MonoInstaller
     {
         [SerializeField] private SettingsPreFab settings = null;
 
@@ -12,16 +12,16 @@ namespace Assets.Scripts.Units.Enemy
         {
             Container.Bind<HealthController>().AsSingle();
 
-            Container.Bind<EnemyStateAttack>().AsSingle();
-            Container.Bind<EnemyStateFollow>().AsSingle().WithArguments(settings.MyTransform);
-            Container.BindInterfacesAndSelfTo<EnemyStateController>().AsSingle();
+            Container.Bind<EnemyUnitStateAttack>().AsSingle();
+            Container.Bind<EnemyUnitStateFollow>().AsSingle().WithArguments(settings.MyTransform);
+            Container.BindInterfacesAndSelfTo<EnemyUnitStateController>().AsSingle();
         }
 
         [System.Serializable]
         public class SettingsPreFab
         {
             [field: SerializeField] public Transform MyTransform { private set; get; } = null;
-            [field: SerializeField] public EnemyBasicFacade EnemyFacade { private set; get; } = null;
+            [field: SerializeField] public EnemyUnitBasicFacade EnemyFacade { private set; get; } = null;
         }
 
         [System.Serializable]

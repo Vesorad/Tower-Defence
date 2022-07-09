@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Assets.Scripts.Units.Enemy
 {
-    public class EnemyBasicFacade : UnitFacade
+    public class EnemyUnitBasicFacade : UnitFacade
     {
         private IMemoryPool pool;
         private EnemySpawner.Settings enemySpawnerSettings;
@@ -27,6 +27,6 @@ namespace Assets.Scripts.Units.Enemy
             transform.position = enemySpawnerSettings.SpawnPlace;
             this.pool = pool;
         }
-        public class Factory : PlaceholderFactory<EnemyBasicFacade> { }
+        public class Factory : PlaceholderFactory<EnemyUnitBasicFacade> { }
     }
 }

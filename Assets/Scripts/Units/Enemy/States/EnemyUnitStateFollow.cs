@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace Assets.Scripts.Units.Enemy.States
 {
-    public class EnemyStateFollow : IUnitState
+    public class EnemyUnitStateFollow : IUnitState
     {
         private readonly Transform transform;
-        private readonly EnemyBasicInstaller.Settings enemySettings;
+        private readonly EnemyUnitBasicInstaller.Settings enemySettings;
 
-        public EnemyStateFollow(EnemyBasicInstaller.Settings enemySettings, Transform transform)
+        public EnemyUnitStateFollow(EnemyUnitBasicInstaller.Settings enemySettings, Transform transform)
         {
             this.transform = transform;
             this.enemySettings = enemySettings;

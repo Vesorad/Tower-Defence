@@ -28,7 +28,7 @@ namespace Assets.Scripts.Zenject
         [System.Serializable]
         public class Enemies
         {
-            [field: SerializeField] public EnemyBasicInstaller.Settings EnemyBasic { private set; get; } = null;
+            [field: SerializeField] public EnemyUnitBasicInstaller.Settings EnemyBasic { private set; get; } = null;
         }
     }
 }

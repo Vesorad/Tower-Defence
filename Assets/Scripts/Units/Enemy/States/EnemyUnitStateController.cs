@@ -3,13 +3,13 @@ using Zenject;
 
 namespace Assets.Scripts.Units.Enemy.States
 {
-    public class EnemyStateController : IInitializable, ITickable, IFixedTickable
+    public class EnemyUnitStateController : IInitializable, ITickable, IFixedTickable
     {
         private UnitStates currentState;
         private IUnitState currentStateHandler;
         private List<IUnitState> states;
 
-        public EnemyStateController(EnemyStateAttack attack, EnemyStateFollow follow)
+        public EnemyUnitStateController(EnemyUnitStateAttack attack, EnemyUnitStateFollow follow)
         {
             states = new List<IUnitState> { attack, follow };
             currentStateHandler = follow;

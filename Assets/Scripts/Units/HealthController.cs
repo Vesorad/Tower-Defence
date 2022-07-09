@@ -5,13 +5,13 @@ namespace Assets.Scripts.Units
 {
     public class HealthController : IInitializable
     {
-        private readonly EnemyBasicInstaller.Settings settings;
-        private readonly EnemyBasicFacade enemyBasicFacade;
+        private readonly EnemyUnitBasicInstaller.Settings settings;
+        private readonly EnemyUnitBasicFacade enemyBasicFacade;
 
         private int currentHealth;
         private int maxHealth;
 
-        public HealthController(EnemyBasicInstaller.Settings settings, EnemyBasicFacade enemyBasicFacade)
+        public HealthController(EnemyUnitBasicInstaller.Settings settings, EnemyUnitBasicFacade enemyBasicFacade)
         {
             this.settings = settings;
             this.enemyBasicFacade = enemyBasicFacade;

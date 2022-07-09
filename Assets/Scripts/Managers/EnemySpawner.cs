@@ -7,10 +7,10 @@ namespace Assets.Scripts.Managers
     public class EnemySpawner: ITickable
     {
         private readonly Settings settings;
-        private readonly EnemyBasicFacade.Factory enemyBasicFactory;
+        private readonly EnemyUnitBasicFacade.Factory enemyBasicFactory;
 
         private float timeToNextSpawn;
-        public EnemySpawner(Settings settings, EnemyBasicFacade.Factory enemyBasicFactory)
+        public EnemySpawner(Settings settings, EnemyUnitBasicFacade.Factory enemyBasicFactory)
         {
             this.settings = settings;
             this.enemyBasicFactory = enemyBasicFactory;

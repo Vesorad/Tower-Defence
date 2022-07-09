@@ -1,6 +1,6 @@
 namespace Assets.Scripts.Units.Enemy.States
 {
-    public class EnemyStateAttack : IUnitState
+    public class EnemyUnitStateAttack : IUnitState
     {
         public void EnterState()
         {
