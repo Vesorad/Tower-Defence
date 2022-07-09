@@ -1,7 +1,6 @@
-using Assets.Scripts.Tower;
 using Zenject;
 
-namespace Assets.Scripts.MonoInstallers
+namespace Assets.Scripts.Tower
 {
     public class TowerInstaller : MonoInstaller
     {

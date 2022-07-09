@@ -1,7 +1,8 @@
+using Assets.Scripts.Units.Enemy;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Enemies
+namespace Assets.Scripts.Managers
 {
     public class EnemySpawner: ITickable
     {

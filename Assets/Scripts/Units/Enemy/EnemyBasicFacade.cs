@@ -1,9 +1,10 @@
+using Assets.Scripts.Managers;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Enemies
+namespace Assets.Scripts.Units.Enemy
 {
-    public class EnemyBasicFacade : EnemyFacade
+    public class EnemyBasicFacade : UnitFacade
     {
         private IMemoryPool pool;
         private EnemySpawner.Settings enemySpawnerSettings;

@@ -1,9 +1,9 @@
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Enemies
+namespace Assets.Scripts.Units
 {
-    public abstract class EnemyFacade : MonoBehaviour, IPoolable<IMemoryPool>
+    public abstract class UnitFacade : MonoBehaviour, IPoolable<IMemoryPool>
     {
         public abstract void Die();
 

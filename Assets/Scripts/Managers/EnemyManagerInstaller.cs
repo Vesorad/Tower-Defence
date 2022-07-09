@@ -1,7 +1,6 @@
-using Assets.Scripts.Enemies;
 using Zenject;
 
-namespace Assets.Scripts.MonoInstallers
+namespace Assets.Scripts.Managers
 {
     public class EnemyManagerInstaller : MonoInstaller
     {

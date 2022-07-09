@@ -3,7 +3,7 @@ using Assets.Scripts.Zenject;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.MonoInstallers
+namespace Assets.Scripts.Managers
 {
     public class MainSceneInstaller : MonoInstaller
     {

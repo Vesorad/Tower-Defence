@@ -1,4 +1,5 @@
-using Assets.Scripts.Enemies;
+using Assets.Scripts.Managers;
+using Assets.Scripts.Units.Enemy;
 using UnityEngine;
 using Zenject;
 
@@ -27,7 +28,7 @@ namespace Assets.Scripts.Zenject
         [System.Serializable]
         public class Enemies
         {
-            [field: SerializeField] public Enemy.Settings EnemyBasic { private set; get; } = null;
+            [field: SerializeField] public EnemyBasicInstaller.Settings EnemyBasic { private set; get; } = null;
         }
     }
 }

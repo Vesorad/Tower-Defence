@@ -1,8 +1,7 @@
-using Assets.Scripts.Roof;
 using Zenject;
 using UnityEngine;
 
-namespace Assets.Scripts.MonoInstallers
+namespace Assets.Scripts.Roof
 {
     public class RoofInstaller : MonoInstaller
     {
