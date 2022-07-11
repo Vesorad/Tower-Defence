@@ -1,5 +1,4 @@
 using Assets.Scripts.Managers;
-using UnityEngine;
 using Zenject;
 
 namespace Assets.Scripts.Units.Enemy
@@ -17,7 +16,6 @@ namespace Assets.Scripts.Units.Enemy
 
         public override void Die()
         {
-            Debug.Log("Zabity");
             pool.Despawn(this);
         }
 
@@ -27,6 +25,7 @@ namespace Assets.Scripts.Units.Enemy
             transform.position = enemySpawnerSettings.SpawnPlace;
             this.pool = pool;
         }
+
         public class Factory : PlaceholderFactory<EnemyUnitBasicFacade> { }
     }
 }

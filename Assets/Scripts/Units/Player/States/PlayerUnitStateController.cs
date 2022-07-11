@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using Zenject;
 
-namespace Assets.Scripts.Units.Enemy.States
+namespace Assets.Scripts.Units.Player.States
 {
-    public class EnemyUnitStateController : UnitStateController
+    public class PlayerUnitStateController : UnitStateController
     {
         [Inject]
-        public void Construct(EnemyUnitStateAttack attack, EnemyUnitStateDefault defaultState)
+        public void Construct(PlayerUnitStateAttack attack, PlayerUnitStateIdle defaultState)
         {
             States = new List<IUnitState> { attack, defaultState };
             CurrentStateHandler = defaultState;

@@ -1,20 +1,32 @@
 using Zenject;
 using UnityEngine;
 using Assets.Scripts.Units.Enemy.States;
+using Assets.Scripts.Signals;
 
 namespace Assets.Scripts.Units.Enemy
 {
     public class EnemyUnitBasicInstaller : MonoInstaller
     {
-        [SerializeField] private SettingsPreFab settings = null;
+        [SerializeField] private SettingsPreFab settingsPreFab = null;
+
+        [Inject] private Settings settings;
 
         public override void InstallBindings()
         {
-            Container.Bind<HealthController>().AsSingle();
+            Container.Bind<HealthController>().AsSingle().WithArguments(settings.Health, settingsPreFab.EnemyFacade);
+            Container.BindInterfacesAndSelfTo<EnemyUnitStateController>().AsSingle();
 
             Container.Bind<EnemyUnitStateAttack>().AsSingle();
-            Container.Bind<EnemyUnitStateFollow>().AsSingle().WithArguments(settings.MyTransform);
-            Container.BindInterfacesAndSelfTo<EnemyUnitStateController>().AsSingle();
+            Container.Bind<EnemyUnitStateDefault>().AsSingle().WithArguments(settingsPreFab.MyTransform);
+
+            BindSignals();
+        }
+
+
+        private void BindSignals()
+        {
+            Container.DeclareSignal<DealDamageUnitSignal>();
+            Container.BindSignal<DealDamageUnitSignal>().ToMethod<HealthController>((x, s) => x.Hit(s.Damage)).FromResolve();
         }
 
         [System.Serializable]

@@ -1,18 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerUnitStateIdle : MonoBehaviour
+namespace Assets.Scripts.Units.Player.States
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerUnitStateIdle : IUnitState
     {
-        
-    }
+        private readonly Transform transform;
+        private readonly PlayerUnitBasicInstaller.Settings settings;
+        private readonly PlayerUnitStateController playerUnitStateController;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private AnimationsSymulation animationsSymulation = new();
+
+        public PlayerUnitStateIdle(Transform transform, PlayerUnitBasicInstaller.Settings settings,
+           PlayerUnitStateController playerUnitStateController)
+        {
+            this.transform = transform;
+            this.settings = settings;
+            this.playerUnitStateController = playerUnitStateController;
+        }
+
+        public void EnterState() { }
+
+        public void FixedUpdate()
+        {
+            if (Physics2D.OverlapCircle(transform.position, settings.AttackRange, settings.EnemyLayer))
+                playerUnitStateController.ChangeState(UnitStates.Attack);
+        }
+
+        public void Update()
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp
+                (settings.MinMaxSwing.x, settings.MinMaxSwing.y, animationsSymulation.LerpValue(settings.SpeedSwing)));
+        }
+        public void ExitState() { }
     }
 }

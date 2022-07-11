@@ -8,12 +8,14 @@ namespace Assets.Scripts.Managers
     {
         private readonly Settings settings;
         private readonly EnemyUnitBasicFacade.Factory enemyBasicFactory;
+        private readonly SignalBus signalBus;
 
         private float timeToNextSpawn;
-        public EnemySpawner(Settings settings, EnemyUnitBasicFacade.Factory enemyBasicFactory)
+        public EnemySpawner(Settings settings, EnemyUnitBasicFacade.Factory enemyBasicFactory, SignalBus signalBus)
         {
             this.settings = settings;
             this.enemyBasicFactory = enemyBasicFactory;
+            this.signalBus = signalBus;
         }
 
         public void Tick()
@@ -26,9 +28,14 @@ namespace Assets.Scripts.Managers
             if (Time.time >= timeToNextSpawn)
             {
                 timeToNextSpawn = Time.time + settings.TimeToSpawn;
-                enemyBasicFactory.Create();
+                signalBus.Fire<Signals.SpawnEnemySignal>();
             }
 
+        }
+
+        public void ChooseEnemyToSpawn()
+        {
+            enemyBasicFactory.Create();
         }
 
         [System.Serializable]

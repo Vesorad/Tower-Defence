@@ -1,38 +1,31 @@
-using Assets.Scripts.Units.Enemy;
 using Zenject;
 
 namespace Assets.Scripts.Units
 {
     public class HealthController : IInitializable
     {
-        private readonly EnemyUnitBasicInstaller.Settings settings;
-        private readonly EnemyUnitBasicFacade enemyBasicFacade;
+        private readonly int maxHealth;
+        private readonly UnitFacade unitFacade;
 
         private int currentHealth;
-        private int maxHealth;
 
-        public HealthController(EnemyUnitBasicInstaller.Settings settings, EnemyUnitBasicFacade enemyBasicFacade)
+        public HealthController(int health, UnitFacade unitFacade)
         {
-            this.settings = settings;
-            this.enemyBasicFacade = enemyBasicFacade;
-            maxHealth = settings.Health;
+            maxHealth = health;
+            this.unitFacade = unitFacade;
         }
 
         public void Initialize()
         {
             currentHealth = maxHealth;
+            UnityEngine.Debug.Log(currentHealth);
         }
 
         public void Hit(int damage)
         {
             currentHealth -= damage;
             if (currentHealth <= 0)
-                Die();
-        }
-
-        public void Die()
-        {
-
+                unitFacade.Die();
         }
     }
 }

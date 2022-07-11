@@ -1,18 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class PlayerUnitStateAttack : MonoBehaviour
+namespace Assets.Scripts.Units.Player.States
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerUnitStateAttack : IUnitState
     {
-        
-    }
+        private readonly Transform transform;
+        private readonly PlayerUnitBasicInstaller.Settings settings;
+        private readonly PlayerUnitStateController playerUnitStateController;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private Transform target;
+
+        public PlayerUnitStateAttack(Transform transform, PlayerUnitBasicInstaller.Settings settings,
+            PlayerUnitStateController playerUnitStateController)
+        {
+            this.transform = transform;
+            this.settings = settings;
+            this.playerUnitStateController = playerUnitStateController;
+        }
+
+        public void EnterState() => FindTarget();
+
+        public void FixedUpdate()
+        {
+
+        }
+
+        public void Update()
+        {
+            if (target == null)
+                playerUnitStateController.ChangeState(UnitStates.DefaultState);
+        }
+
+        public void ExitState()
+        {
+
+        }
+
+        public void FindTarget()
+        {
+            target = Physics2D.OverlapCircle(transform.position, settings.AttackRange, settings.EnemyLayer).transform;
+        }
     }
 }

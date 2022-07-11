@@ -32,10 +32,21 @@ MonoBehaviour:
     <HighOnUpdateTower>k__BackingField: {x: 0, y: 3}
   <EnemySpawnerSettings>k__BackingField:
     <SpawnPlace>k__BackingField: {x: 0, y: -5}
-    <TimeToSpawn>k__BackingField: 2
-  <EnemiesSettings>k__BackingField:
+    <TimeToSpawn>k__BackingField: 5
+  <EnemyUnitsSettings>k__BackingField:
     <EnemyBasic>k__BackingField:
       <Health>k__BackingField: 1
       <MovementType>k__BackingField: {fileID: 11400000, guid: 6df343a2bee14e54f92c5a61c0330e2a, type: 2}
       <Speed>k__BackingField: 2
       <DamageOnRoof>k__BackingField: 1
+  <PlayerUnitsSeetings>k__BackingField:
+    <PlayerBasic>k__BackingField:
+      <Health>k__BackingField: 1
+      <Damage>k__BackingField: 10
+      <CooldownAttack>k__BackingField: 10
+      <AttackRange>k__BackingField: 10
+      <EnemyLayer>k__BackingField:
+        serializedVersion: 2
+        m_Bits: 512
+      <SpeedSwing>k__BackingField: 1
+      <MinMaxSwing>k__BackingField: {x: -20, y: 20}

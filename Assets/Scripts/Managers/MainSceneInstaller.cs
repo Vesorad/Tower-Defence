@@ -25,6 +25,8 @@ namespace Assets.Scripts.Managers
             SignalBusInstaller.Install(Container);
 
             Container.DeclareSignal<BuildTowerSignal>();
+            Container.DeclareSignal<SpawnEnemySignal>();
+
             Container.BindSignal<BuildTowerSignal>().ToMethod<GameManager>((x, s) => x.UpdateHighRoofGlobalParameter()).FromResolve();
         }
     }
