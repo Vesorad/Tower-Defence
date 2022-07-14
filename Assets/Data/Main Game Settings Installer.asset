@@ -21,9 +21,17 @@ MonoBehaviour:
       <NameFolder>k__BackingField: Tower One Slot
       <Prefab>k__BackingField: {fileID: 7444975477821562942, guid: 165490bd428fdd245945dc542c4fa68e, type: 3}
       <PoolSize>k__BackingField: 20
+    <Projectile>k__BackingField:
+      <NameFolder>k__BackingField: Projectile
+      <Prefab>k__BackingField: {fileID: 2266772661653500091, guid: 521a4e43ad658a34db3a90848a0d5054, type: 3}
+      <PoolSize>k__BackingField: 100
     <EnemyBasic>k__BackingField:
       <NameFolder>k__BackingField: Enemy Basic
       <Prefab>k__BackingField: {fileID: 6793374435499931297, guid: a1af6a067dcaca844af412da9b509d30, type: 3}
+      <PoolSize>k__BackingField: 100
+    <PlayerBasic>k__BackingField:
+      <NameFolder>k__BackingField: Player Unit Basic
+      <Prefab>k__BackingField: {fileID: 7606141026255071602, guid: 19e5f15feae43cd4388f0a5014f36a68, type: 3}
       <PoolSize>k__BackingField: 100
   <TowerBuidlingSettings>k__BackingField:
     <StartPositionRoof>k__BackingField: {x: 0, y: -1}
@@ -31,12 +39,25 @@ MonoBehaviour:
     <HighOnUpdateRoof>k__BackingField: {x: 0, y: 3}
     <HighOnUpdateTower>k__BackingField: {x: 0, y: 3}
   <EnemySpawnerSettings>k__BackingField:
-    <EnemiesToSpawn>k__BackingField:
-    - {fileID: 7985916568613086106, guid: a1af6a067dcaca844af412da9b509d30, type: 3}
-    <TimeToSpawn>k__BackingField: 0.1
-  <EnemiesSettings>k__BackingField:
+    <SpawnPlace>k__BackingField: {x: 0, y: -5}
+    <TimeToSpawn>k__BackingField: 5
+  <EnemyUnitsSettings>k__BackingField:
     <EnemyBasic>k__BackingField:
       <Health>k__BackingField: 1
       <MovementType>k__BackingField: {fileID: 11400000, guid: 6df343a2bee14e54f92c5a61c0330e2a, type: 2}
       <Speed>k__BackingField: 2
       <DamageOnRoof>k__BackingField: 1
+  <PlayerUnitsSeetings>k__BackingField:
+    <PlayerBasic>k__BackingField:
+      <Health>k__BackingField: 3
+      <ProjectileBase>k__BackingField:
+        <Damage>k__BackingField: 1
+        <Speed>k__BackingField: 2
+        <ProjectileType>k__BackingField: 0
+      <CooldownAttack>k__BackingField: 1
+      <AttackRange>k__BackingField: 2
+      <EnemyLayer>k__BackingField:
+        serializedVersion: 2
+        m_Bits: 512
+      <SpeedSwing>k__BackingField: 1
+      <MinMaxSwing>k__BackingField: {x: -20, y: 20}
