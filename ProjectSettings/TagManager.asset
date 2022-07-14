@@ -16,15 +16,15 @@ TagManager:
   - 
   - Enemy Unit
   - Player Unit
-  - Projectile
+  - 
+  - 
+  - Projectile Player
+  - Projectile Enemy
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Projectile Wall
   - 
   - 
   - 
