@@ -53,7 +53,7 @@ MonoBehaviour:
       <ProjectileBase>k__BackingField:
         <Damage>k__BackingField: 1
         <Speed>k__BackingField: 2
-        <ProjectileType>k__BackingField: 0
+        <ProjectileLayerNumber>k__BackingField: 13
       <CooldownAttack>k__BackingField: 1
       <AttackRange>k__BackingField: 2
       <EnemyLayer>k__BackingField:
