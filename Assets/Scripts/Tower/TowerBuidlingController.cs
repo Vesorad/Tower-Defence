@@ -1,3 +1,4 @@
+using Assets.Scripts.Managers;
 using Assets.Scripts.Roof;
 using UnityEngine;
 using Zenject;
@@ -6,27 +7,21 @@ namespace Assets.Scripts.Tower
 {
     public class TowerBuidlingController : IInitializable
     {
-        private readonly Settings settings;
         private readonly RoofFacade.Factory roofFactory;
         private readonly TowerOneSlotFacade.Factory towerOneSlotFactory;
+        private readonly GameManager gameManager;
 
-        private Vector2 towerHigh;
-
-        public TowerBuidlingController(Settings settings, TowerOneSlotFacade.Factory towerOneSlotFactory, RoofFacade.Factory roofFactory)
+        public TowerBuidlingController(TowerOneSlotFacade.Factory towerOneSlotFactory, RoofFacade.Factory roofFactory,
+            GameManager gameManager)
         {
-            this.settings = settings;
             this.towerOneSlotFactory = towerOneSlotFactory;
             this.roofFactory = roofFactory;
+            this.gameManager = gameManager;
         }
 
-        public void Initialize()
-        {
-            towerHigh = settings.StartPositionTower;
+        public void Initialize() => roofFactory.Create().transform.position = gameManager.HighRoof;
 
-            roofFactory.Create().transform.position = settings.StartPositionRoof;
-        }
-
-        public void AddNewPartTower() => towerOneSlotFactory.Create().transform.position = (towerHigh += settings.HighOnUpdateTower);
+        public void AddNewPartTower() => towerOneSlotFactory.Create().transform.position = (gameManager.HighTower);
 
         [System.Serializable]
         public class Settings

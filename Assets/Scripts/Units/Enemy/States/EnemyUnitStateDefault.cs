@@ -22,17 +22,19 @@ namespace Assets.Scripts.Units.Enemy.States
 
         public void EnterState() { }
 
-        public void ExitState() { }
-
         public void FixedUpdate()
         {
             enemySettings.MovementType.Movement(enemySettings.Speed, transform);
-            if (transform.position.y >= gameManager.HighRoof.y)
-            {
-                signalBus.Fire(new Signals.DealDamageUnitSignal() { Damage = 1 });
-            }
+            HitRoof();
         }
 
         public void Update() { }
+        public void ExitState() { }
+
+        private void HitRoof()
+        {
+            if (transform.position.y >= gameManager.HighRoof.y)
+                signalBus.Fire(new Signals.DealDamageUnitSignal() { Damage = 1 });
+        }
     }
 }

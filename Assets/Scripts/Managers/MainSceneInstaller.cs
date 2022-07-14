@@ -1,6 +1,5 @@
 using Assets.Scripts.Signals;
 using Assets.Scripts.Zenject;
-using UnityEngine;
 using Zenject;
 
 namespace Assets.Scripts.Managers
@@ -14,10 +13,12 @@ namespace Assets.Scripts.Managers
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<GameManager>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnemySpawner>().AsSingle();
+            Container.Bind<PlayerUnitsController>().AsSingle();
 
             BindSignals();
 
-            gameFactores.BindFactores(Container, settings, new GameObject("---POOLS---").transform);
+            gameFactores.BindFactores(Container, settings);
         }
 
         private void BindSignals()
@@ -25,9 +26,12 @@ namespace Assets.Scripts.Managers
             SignalBusInstaller.Install(Container);
 
             Container.DeclareSignal<BuildTowerSignal>();
-            Container.DeclareSignal<SpawnEnemySignal>();
+            Container.DeclareSignal<SpawnEnemyUnitSignal>();
+            Container.DeclareSignal<SpawnPlayerUnitSignal>();
 
             Container.BindSignal<BuildTowerSignal>().ToMethod<GameManager>((x, s) => x.UpdateHighRoofGlobalParameter()).FromResolve();
+            Container.BindSignal<SpawnPlayerUnitSignal>().ToMethod<PlayerUnitsController>((x, s) => x.SpawnUnitPlayer()).FromResolve();
+            Container.BindSignal<SpawnEnemyUnitSignal>().ToMethod<EnemySpawner>((x, s) => x.ChooseEnemyToSpawn()).FromResolve();
         }
     }
 }

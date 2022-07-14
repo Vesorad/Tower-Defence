@@ -8,7 +8,7 @@ namespace Assets.Scripts.Units.Player.States
         private readonly PlayerUnitBasicInstaller.Settings settings;
         private readonly PlayerUnitStateController playerUnitStateController;
 
-        private AnimationsSymulation animationsSymulation = new();
+        private Animation.AnimationsSymulation animationsSymulation = new();
 
         public PlayerUnitStateIdle(Transform transform, PlayerUnitBasicInstaller.Settings settings,
            PlayerUnitStateController playerUnitStateController)

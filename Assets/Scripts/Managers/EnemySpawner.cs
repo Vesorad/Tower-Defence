@@ -28,9 +28,8 @@ namespace Assets.Scripts.Managers
             if (Time.time >= timeToNextSpawn)
             {
                 timeToNextSpawn = Time.time + settings.TimeToSpawn;
-                signalBus.Fire<Signals.SpawnEnemySignal>();
+                signalBus.Fire<Signals.SpawnEnemyUnitSignal>();
             }
-
         }
 
         public void ChooseEnemyToSpawn()

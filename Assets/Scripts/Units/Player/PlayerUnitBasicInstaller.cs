@@ -1,5 +1,6 @@
 using Assets.Scripts.Signals;
 using Assets.Scripts.Units.Player.States;
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -27,18 +28,18 @@ namespace Assets.Scripts.Units.Player
             Container.BindSignal<DealDamageUnitSignal>().ToMethod<HealthController>((x, s) => x.Hit(s.Damage)).FromResolve();
         }
 
-        [System.Serializable]
+        [Serializable]
         public class SettingsPreFab
         {
             [field: SerializeField] public Transform transform { private set; get; } = null;
             [field: SerializeField] public UnitFacade playerUnitFacade { private set; get; } = null;
         }
 
-        [System.Serializable]
+        [Serializable]
         public class Settings
         {
             [field: SerializeField, Min(1)] public int Health { private set; get; } = 1;
-            [field: SerializeField, Min(1)] public int Damage { private set; get; } = 1;
+            [field: SerializeField] public Projectiles.ProjectileBase ProjectileBase { private set; get; } = null;
             [field: SerializeField, Min(0.1f)] public float CooldownAttack { private set; get; } = 0.1f;
             [field: SerializeField, Min(0.1f)] public float AttackRange { private set; get; } = 0.1f;
             [field: SerializeField, Min(0.1f)] public LayerMask EnemyLayer { private set; get; } = default;

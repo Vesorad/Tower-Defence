@@ -7,6 +7,7 @@ namespace Assets.Scripts.Managers
     public class GameManager : IInitializable
     {
         public Vector2 HighRoof { private set; get; }
+        public Vector2 HighTower { private set; get; }
 
         private readonly TowerBuidlingController.Settings towerSettings;
 
@@ -15,8 +16,16 @@ namespace Assets.Scripts.Managers
             this.towerSettings = towerSettings;
         }
 
-        public void Initialize() => HighRoof = towerSettings.StartPositionRoof;
-        public void UpdateHighRoofGlobalParameter() => HighRoof += towerSettings.HighOnUpdateRoof;
+        public void Initialize()
+        {
+            HighRoof = towerSettings.StartPositionRoof;
+            HighTower = towerSettings.StartPositionTower;
+        }
+        public void UpdateHighRoofGlobalParameter()
+        {
+            HighRoof += towerSettings.HighOnUpdateRoof;
+            HighTower += towerSettings.HighOnUpdateTower;
+        }
 
     }
 }
