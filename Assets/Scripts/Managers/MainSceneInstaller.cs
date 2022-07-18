@@ -30,7 +30,7 @@ namespace Assets.Scripts.Managers
             Container.DeclareSignal<SpawnPlayerUnitSignal>();
 
             Container.BindSignal<BuildTowerSignal>().ToMethod<GameManager>((x, s) => x.UpdateHighRoofGlobalParameter()).FromResolve();
-            Container.BindSignal<SpawnPlayerUnitSignal>().ToMethod<PlayerUnitsController>((x, s) => x.SpawnUnitPlayer()).FromResolve();
+            Container.BindSignal<SpawnPlayerUnitSignal>().ToMethod<PlayerUnitsController>((x, s) => x.SpawnUnitPlayer(s.SpawnPos)).FromResolve();
             Container.BindSignal<SpawnEnemyUnitSignal>().ToMethod<EnemySpawner>((x, s) => x.ChooseEnemyToSpawn()).FromResolve();
         }
     }
