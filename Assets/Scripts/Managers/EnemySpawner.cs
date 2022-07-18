@@ -34,7 +34,7 @@ namespace Assets.Scripts.Managers
 
         public void ChooseEnemyToSpawn()
         {
-            enemyBasicFactory.Create();
+            enemyBasicFactory.Create(settings.SpawnPlace);
         }
 
         [System.Serializable]

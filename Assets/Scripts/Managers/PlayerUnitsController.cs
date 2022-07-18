@@ -1,4 +1,5 @@
 using Assets.Scripts.Units.Player;
+using UnityEngine;
 
 namespace Assets.Scripts.Managers
 {
@@ -11,9 +12,9 @@ namespace Assets.Scripts.Managers
             this.playerUnitBasicFactory = playerUnitBasicFactory;
         }
 
-        public void SpawnUnitPlayer()
+        public void SpawnUnitPlayer(Vector2 startPos)
         {
-            playerUnitBasicFactory.Create();
+            playerUnitBasicFactory.Create(startPos);
         }
     }
 }

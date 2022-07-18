@@ -15,6 +15,5 @@ public class TestButton : MonoBehaviour
     public void TriggerButton()
     {
         signalBus.Fire<BuildTowerSignal>();
-        signalBus.Fire<SpawnPlayerUnitSignal>();
     }
 }

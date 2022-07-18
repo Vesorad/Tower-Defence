@@ -1,4 +1,5 @@
 using Assets.Scripts.Managers;
+using UnityEngine;
 using Zenject;
 
 namespace Assets.Scripts.Units.Enemy
@@ -6,18 +7,16 @@ namespace Assets.Scripts.Units.Enemy
     public class EnemyUnitBasicFacade : UnitFacade
     {
         private IMemoryPool pool;
-        private EnemySpawner.Settings enemySpawnerSettings;
 
         [Inject]
-        public void Construct(EnemySpawner.Settings enemySpawnerSettings, HealthController healthController)
+        public void Construct(HealthController healthController)
         {
-            this.enemySpawnerSettings = enemySpawnerSettings;
             HealthController = healthController;
         }
 
-        public override void OnSpawned(IMemoryPool pool)
+        public override void OnSpawned(Vector2 startPos, IMemoryPool pool)
         {
-            transform.position = enemySpawnerSettings.SpawnPlace;
+            transform.position = startPos;
             this.pool = pool;
         }
 
@@ -28,6 +27,6 @@ namespace Assets.Scripts.Units.Enemy
             pool.Despawn(this);
         }
 
-        public class Factory : PlaceholderFactory<EnemyUnitBasicFacade> { }
+        public class Factory : PlaceholderFactory<Vector2, EnemyUnitBasicFacade> { }
     }
 }

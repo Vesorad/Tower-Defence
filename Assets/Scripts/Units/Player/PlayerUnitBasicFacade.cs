@@ -1,4 +1,5 @@
 using Assets.Scripts.Managers;
+using UnityEngine;
 using Zenject;
 
 namespace Assets.Scripts.Units.Player
@@ -14,10 +15,10 @@ namespace Assets.Scripts.Units.Player
             this.gameManager = gameManager;
         }
 
-        public override void OnSpawned(IMemoryPool p1) => transform.position = gameManager.HighTower;
+        public override void OnSpawned(Vector2 startPos, IMemoryPool p1) => transform.position = startPos;
         public override void OnDespawned() { }
         public override void Die() { }
 
-        public class Factory : PlaceholderFactory<PlayerUnitBasicFacade> { }
+        public class Factory : PlaceholderFactory<Vector2, PlayerUnitBasicFacade> { }
     }
 }

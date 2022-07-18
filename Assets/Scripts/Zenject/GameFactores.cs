@@ -29,13 +29,13 @@ namespace Assets.Scripts.Zenject
                 (settings.Projectile.Prefab).UnderTransform
                 (CreateSubFolder(poolsHolder, settings.Projectile.NameFolder)));
 
-            Container.BindFactory<EnemyUnitBasicFacade, EnemyUnitBasicFacade.Factory>().FromPoolableMemoryPool
-                <EnemyUnitBasicFacade, EnemyBasicPool>(poolBinder => poolBinder.
+            Container.BindFactory<Vector2, EnemyUnitBasicFacade, EnemyUnitBasicFacade.Factory>().FromPoolableMemoryPool
+                <Vector2, EnemyUnitBasicFacade, EnemyBasicPool>(poolBinder => poolBinder.
                 WithInitialSize(settings.EnemyBasic.PoolSize).FromComponentInNewPrefab(settings.EnemyBasic.Prefab)
                 .UnderTransform(CreateSubFolder(poolsHolder, settings.EnemyBasic.NameFolder)));
 
-            Container.BindFactory<PlayerUnitBasicFacade, PlayerUnitBasicFacade.Factory>().FromPoolableMemoryPool
-               <PlayerUnitBasicFacade, PlayerBasicPool>(poolBinder => poolBinder.
+            Container.BindFactory<Vector2, PlayerUnitBasicFacade, PlayerUnitBasicFacade.Factory>().FromPoolableMemoryPool
+               <Vector2, PlayerUnitBasicFacade, PlayerBasicPool>(poolBinder => poolBinder.
                WithInitialSize(settings.PlayerBasic.PoolSize).FromComponentInNewPrefab(settings.PlayerBasic.Prefab)
                .UnderTransform(CreateSubFolder(poolsHolder, settings.PlayerBasic.NameFolder)));
         }
@@ -63,7 +63,7 @@ namespace Assets.Scripts.Zenject
         private class RoofPool : MonoPoolableMemoryPool<IMemoryPool, RoofFacade> { }
         private class TowerOneSlotPool : MonoPoolableMemoryPool<IMemoryPool, TowerOneSlotFacade> { }
         private class ProjectilePool : MonoPoolableMemoryPool<Vector2, ProjectileBase, IMemoryPool, ProjectileFacade> { }
-        private class EnemyBasicPool : MonoPoolableMemoryPool<IMemoryPool, EnemyUnitBasicFacade> { }
-        private class PlayerBasicPool : MonoPoolableMemoryPool<IMemoryPool, PlayerUnitBasicFacade> { }
+        private class EnemyBasicPool : MonoPoolableMemoryPool<Vector2, IMemoryPool, EnemyUnitBasicFacade> { }
+        private class PlayerBasicPool : MonoPoolableMemoryPool<Vector2, IMemoryPool, PlayerUnitBasicFacade> { }
     }
 }
