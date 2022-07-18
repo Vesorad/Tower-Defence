@@ -13,7 +13,7 @@ namespace Assets.Scripts.Managers
 
         private void BindSignals()
         {
-            Container.BindSignal<Signals.SpawnEnemyUnitSignal>().ToMethod<EnemySpawner>((x, s) => x.ChooseEnemyToSpawn()).FromResolve();
+            Container.BindSignal<Signals.SpawnEnemyUnitSignal>().ToMethod<EnemySpawner>((x, s) => x.ChooseEnemyToSpawn(s.UnitNumber)).FromResolve();
         }
     }
 }

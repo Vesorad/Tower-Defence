@@ -25,6 +25,7 @@ namespace Assets.Scripts.Zenject
 
             Container.BindInstance(EnemySpawnerSettings).IfNotBound();
             Container.BindInstance(EnemyUnitsSettings.EnemyBasic).IfNotBound();
+            Container.BindInstance(EnemyUnitsSettings.EnemyShield).IfNotBound();
             Container.BindInstance(PlayerUnitsSeetings.PlayerBasic).IfNotBound();
         }
 
@@ -32,6 +33,7 @@ namespace Assets.Scripts.Zenject
         public class EnemyUnits
         {
             [field: SerializeField] public EnemyUnitBasicInstaller.Settings EnemyBasic { private set; get; } = null;
+            [field: SerializeField] public EnemyUnitShieldInstaller.Settings EnemyShield { private set; get; } = null;
         }
 
         [System.Serializable]

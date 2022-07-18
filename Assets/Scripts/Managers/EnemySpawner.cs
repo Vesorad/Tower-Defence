@@ -4,17 +4,20 @@ using Zenject;
 
 namespace Assets.Scripts.Managers
 {
-    public class EnemySpawner: ITickable
+    public class EnemySpawner : ITickable
     {
         private readonly Settings settings;
         private readonly EnemyUnitBasicFacade.Factory enemyBasicFactory;
+        private readonly EnemyUnitShieldFacade.Factory enemyShieldFactory;
         private readonly SignalBus signalBus;
 
         private float timeToNextSpawn;
-        public EnemySpawner(Settings settings, EnemyUnitBasicFacade.Factory enemyBasicFactory, SignalBus signalBus)
+        public EnemySpawner(Settings settings, EnemyUnitBasicFacade.Factory enemyBasicFactory, EnemyUnitShieldFacade.Factory enemyShieldFactory,
+            SignalBus signalBus)
         {
             this.settings = settings;
             this.enemyBasicFactory = enemyBasicFactory;
+            this.enemyShieldFactory = enemyShieldFactory;
             this.signalBus = signalBus;
         }
 
@@ -28,13 +31,24 @@ namespace Assets.Scripts.Managers
             if (Time.time >= timeToNextSpawn)
             {
                 timeToNextSpawn = Time.time + settings.TimeToSpawn;
-                signalBus.Fire<Signals.SpawnEnemyUnitSignal>();
+                signalBus.Fire(new Signals.SpawnEnemyUnitSignal() { UnitNumber = Random.Range(0, 3) });
             }
         }
 
-        public void ChooseEnemyToSpawn()
+        public void ChooseEnemyToSpawn(int unitNumber)
         {
-            enemyBasicFactory.Create(settings.SpawnPlace);
+            switch (unitNumber)
+            {
+                case 0:
+                    enemyBasicFactory.Create(settings.SpawnPlace);
+                    break;
+                case 1:
+                    enemyShieldFactory.Create(settings.SpawnPlace);
+                    break;
+                case 2:
+                    Debug.Log("brak");
+                    break;
+            }
         }
 
         [System.Serializable]

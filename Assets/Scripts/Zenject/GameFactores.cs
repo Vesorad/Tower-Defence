@@ -34,6 +34,11 @@ namespace Assets.Scripts.Zenject
                 WithInitialSize(settings.EnemyBasic.PoolSize).FromComponentInNewPrefab(settings.EnemyBasic.Prefab)
                 .UnderTransform(CreateSubFolder(poolsHolder, settings.EnemyBasic.NameFolder)));
 
+            Container.BindFactory<Vector2, EnemyUnitShieldFacade, EnemyUnitShieldFacade.Factory>().FromPoolableMemoryPool
+               <Vector2, EnemyUnitShieldFacade, EnemyShieldPool>(poolBinder => poolBinder.
+               WithInitialSize(settings.EnemyShield.PoolSize).FromComponentInNewPrefab(settings.EnemyShield.Prefab)
+               .UnderTransform(CreateSubFolder(poolsHolder, settings.EnemyShield.NameFolder)));
+
             Container.BindFactory<Vector2, PlayerUnitBasicFacade, PlayerUnitBasicFacade.Factory>().FromPoolableMemoryPool
                <Vector2, PlayerUnitBasicFacade, PlayerBasicPool>(poolBinder => poolBinder.
                WithInitialSize(settings.PlayerBasic.PoolSize).FromComponentInNewPrefab(settings.PlayerBasic.Prefab)
@@ -56,6 +61,7 @@ namespace Assets.Scripts.Zenject
             [field: SerializeField] public ObjectPool Projectile { private set; get; } = null;
 
             [field: SerializeField] public ObjectPool EnemyBasic { private set; get; } = null;
+            [field: SerializeField] public ObjectPool EnemyShield { private set; get; } = null;
 
             [field: SerializeField] public ObjectPool PlayerBasic { private set; get; } = null;
         }
@@ -64,6 +70,7 @@ namespace Assets.Scripts.Zenject
         private class TowerOneSlotPool : MonoPoolableMemoryPool<IMemoryPool, TowerOneSlotFacade> { }
         private class ProjectilePool : MonoPoolableMemoryPool<Vector2, ProjectileBase, IMemoryPool, ProjectileFacade> { }
         private class EnemyBasicPool : MonoPoolableMemoryPool<Vector2, IMemoryPool, EnemyUnitBasicFacade> { }
+        private class EnemyShieldPool : MonoPoolableMemoryPool<Vector2, IMemoryPool, EnemyUnitShieldFacade> { }
         private class PlayerBasicPool : MonoPoolableMemoryPool<Vector2, IMemoryPool, PlayerUnitBasicFacade> { }
     }
 }

@@ -29,6 +29,10 @@ MonoBehaviour:
       <NameFolder>k__BackingField: Enemy Basic
       <Prefab>k__BackingField: {fileID: 6793374435499931297, guid: a1af6a067dcaca844af412da9b509d30, type: 3}
       <PoolSize>k__BackingField: 100
+    <EnemyShield>k__BackingField:
+      <NameFolder>k__BackingField: Enemy Shield
+      <Prefab>k__BackingField: {fileID: 6793374435499931297, guid: 3cdf8899d0dd30841b11952a3f275643, type: 3}
+      <PoolSize>k__BackingField: 100
     <PlayerBasic>k__BackingField:
       <NameFolder>k__BackingField: Player Unit Basic
       <Prefab>k__BackingField: {fileID: 7606141026255071602, guid: 19e5f15feae43cd4388f0a5014f36a68, type: 3}
@@ -44,6 +48,11 @@ MonoBehaviour:
   <EnemyUnitsSettings>k__BackingField:
     <EnemyBasic>k__BackingField:
       <Health>k__BackingField: 1
+      <MovementType>k__BackingField: {fileID: 11400000, guid: 6df343a2bee14e54f92c5a61c0330e2a, type: 2}
+      <Speed>k__BackingField: 3
+      <DamageOnRoof>k__BackingField: 1
+    <EnemyShield>k__BackingField:
+      <Health>k__BackingField: 3
       <MovementType>k__BackingField: {fileID: 11400000, guid: 6df343a2bee14e54f92c5a61c0330e2a, type: 2}
       <Speed>k__BackingField: 2
       <DamageOnRoof>k__BackingField: 1
