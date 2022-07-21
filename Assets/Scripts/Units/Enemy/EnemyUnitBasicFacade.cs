@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Assets.Scripts.Units.Enemy
 {
-    public class EnemyUnitBasicFacade : UnitFacade
+    public class EnemyUnitBasicFacade : HealthBaseFacade
     {
         private IMemoryPool pool;
 
@@ -22,7 +22,7 @@ namespace Assets.Scripts.Units.Enemy
 
         public override void OnDespawned() { }
 
-        public override void Die()
+        public override void OnDeath()
         {
             pool.Despawn(this);
         }

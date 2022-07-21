@@ -28,6 +28,8 @@ namespace Assets.Scripts.Managers
             Container.DeclareSignal<BuildTowerSignal>();
             Container.DeclareSignal<SpawnEnemyUnitSignal>();
             Container.DeclareSignal<SpawnPlayerUnitSignal>();
+            Container.DeclareSignal<EndGameSignal>();
+            Container.DeclareSignal<HitRoofSignal>();
 
             Container.BindSignal<BuildTowerSignal>().ToMethod<GameManager>((x, s) => x.UpdateHighRoofGlobalParameter()).FromResolve();
             Container.BindSignal<SpawnPlayerUnitSignal>().ToMethod<PlayerUnitsController>((x, s) => x.SpawnUnitPlayer(s.SpawnPos)).FromResolve();

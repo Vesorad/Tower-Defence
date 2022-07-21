@@ -13,7 +13,7 @@ namespace Assets.Scripts.Units.Enemy
 
         public override void InstallBindings()
         {
-            Container.Bind<HealthController>().AsSingle().WithArguments(settings.Health, settingsPreFab.EnemyFacade);
+            Container.BindInterfacesAndSelfTo<HealthController>().AsSingle().WithArguments(settings.Health, settingsPreFab.EnemyFacade);
             Container.BindInterfacesAndSelfTo<EnemyUnitStateController>().AsSingle();
 
             Container.Bind<EnemyUnitStateAttack>().AsSingle();

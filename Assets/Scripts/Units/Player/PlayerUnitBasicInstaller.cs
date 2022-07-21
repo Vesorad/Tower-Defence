@@ -13,7 +13,7 @@ namespace Assets.Scripts.Units.Player
 
         public override void InstallBindings()
         {
-            Container.Bind<HealthController>().AsSingle().WithArguments(settings.Health, settingsPreFab.playerUnitFacade);
+            Container.BindInterfacesAndSelfTo<HealthController>().AsSingle().WithArguments(settings.Health, settingsPreFab.playerUnitFacade);
             Container.BindInterfacesAndSelfTo<PlayerUnitStateController>().AsSingle();
 
             Container.Bind<PlayerUnitStateAttack>().AsSingle().WithArguments(settingsPreFab.transform, settings);
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Units.Player
         public class SettingsPreFab
         {
             [field: SerializeField] public Transform transform { private set; get; } = null;
-            [field: SerializeField] public UnitFacade playerUnitFacade { private set; get; } = null;
+            [field: SerializeField] public HealthBaseFacade playerUnitFacade { private set; get; } = null;
         }
 
         [Serializable]

@@ -1,4 +1,5 @@
 using Assets.Scripts.Managers;
+using Assets.Scripts.Signals;
 using UnityEngine;
 using Zenject;
 
@@ -34,7 +35,10 @@ namespace Assets.Scripts.Units.Enemy.States
         private void HitRoof()
         {
             if (transform.position.y >= gameManager.HighRoof.y)
-                signalBus.Fire(new Signals.DealDamageUnitSignal() { Damage = 1 });
+            {
+                signalBus.Fire(new HitRoofSignal() { Damage = 1 });
+                signalBus.Fire(new DealDamageUnitSignal() { Damage = enemySettings.Health }); //TODO FOR NOW
+            }
         }
     }
 }

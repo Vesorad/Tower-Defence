@@ -30,7 +30,7 @@ namespace Assets.Scripts.Projectiles
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.TryGetComponent(out UnitFacade unit))
+            if (collision.gameObject.TryGetComponent(out HealthBaseFacade unit))
                 unit.Hit(projectile.Damage);
 
             pool.Despawn(this);

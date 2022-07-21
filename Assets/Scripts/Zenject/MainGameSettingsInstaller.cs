@@ -10,7 +10,7 @@ namespace Assets.Scripts.Zenject
     public class MainGameSettingsInstaller : ScriptableObjectInstaller<MainGameSettingsInstaller>
     {
         [field: SerializeField] public GameFactores.Settings FactorySettings { private set; get; } = null;
-        [field: SerializeField] public Roof.RoofController.Settings RoofSettings { private set; get; } = null;
+        [field: SerializeField] public Roof.RoofInstaller.Settings RoofSettings { private set; get; } = null;
         [field: SerializeField] public Tower.TowerBuidlingController.Settings TowerBuidlingSettings { private set; get; } = null;
         [field: SerializeField] public EnemySpawner.Settings EnemySpawnerSettings { private set; get; } = null;
         [field: SerializeField] public EnemyUnits EnemyUnitsSettings { private set; get; } = null;

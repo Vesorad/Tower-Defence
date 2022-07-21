@@ -1,4 +1,5 @@
 using Assets.Scripts.Managers;
+using Assets.Scripts.Units;
 using UnityEngine;
 using Zenject;
 
@@ -8,19 +9,17 @@ namespace Assets.Scripts.Roof
     {
         private readonly Transform transform;
         private readonly GameManager gameManager;
+        private readonly HealthController healthController;
 
-        public RoofController(Settings settings, Transform transform, GameManager gameManager)
+        public RoofController(Transform transform, GameManager gameManager, HealthController healthController)
         {
             this.transform = transform;
             this.gameManager = gameManager;
+            this.healthController = healthController;
         }
 
+
+        public void HitRoof(int damage) => healthController.Hit(damage);
         public void UpdatePosRoof() => transform.position = gameManager.HighRoof;
-
-        [System.Serializable]
-        public class Settings
-        {
-//TODO
-        }
     }
 }

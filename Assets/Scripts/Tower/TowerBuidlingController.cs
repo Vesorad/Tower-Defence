@@ -19,7 +19,7 @@ namespace Assets.Scripts.Tower
             this.gameManager = gameManager;
         }
 
-        public void Initialize() => roofFactory.Create().transform.position = gameManager.HighRoof;
+        public void Initialize() => roofFactory.Create(gameManager.HighRoof);
 
         public void AddNewPartTower() => towerOneSlotFactory.Create().transform.position = (gameManager.HighTower);
 

@@ -3,9 +3,9 @@ using Zenject;
 
 namespace Assets.Scripts.Units.Enemy
 {
-    public class EnemyUnitShieldFacade : UnitFacade
+    public class EnemyUnitShieldFacade : HealthBaseFacade
     {
-        private IMemoryPool pool;
+        private IMemoryPool pool; 
 
         [Inject]
         public void Construct(HealthController healthController)
@@ -21,7 +21,7 @@ namespace Assets.Scripts.Units.Enemy
 
         public override void OnDespawned() { }
 
-        public override void Die()
+        public override void OnDeath()
         {
             pool.Despawn(this);
         }

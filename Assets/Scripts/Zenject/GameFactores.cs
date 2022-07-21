@@ -14,7 +14,7 @@ namespace Assets.Scripts.Zenject
         {
             Transform poolsHolder = new GameObject("---POOLS---").transform;
 
-            Container.BindFactory<RoofFacade, RoofFacade.Factory>().FromPoolableMemoryPool<RoofFacade, RoofPool>
+            Container.BindFactory<Vector2, RoofFacade, RoofFacade.Factory>().FromPoolableMemoryPool<Vector2, RoofFacade, RoofPool>
                 (poolBinder => poolBinder.WithInitialSize(settings.Roof.PoolSize).FromComponentInNewPrefab
                 (settings.Roof.Prefab).UnderTransform(CreateSubFolder(poolsHolder, settings.Roof.NameFolder)));
 
@@ -66,7 +66,7 @@ namespace Assets.Scripts.Zenject
             [field: SerializeField] public ObjectPool PlayerBasic { private set; get; } = null;
         }
 
-        private class RoofPool : MonoPoolableMemoryPool<IMemoryPool, RoofFacade> { }
+        private class RoofPool : MonoPoolableMemoryPool<Vector2, IMemoryPool, RoofFacade> { }
         private class TowerOneSlotPool : MonoPoolableMemoryPool<IMemoryPool, TowerOneSlotFacade> { }
         private class ProjectilePool : MonoPoolableMemoryPool<Vector2, ProjectileBase, IMemoryPool, ProjectileFacade> { }
         private class EnemyBasicPool : MonoPoolableMemoryPool<Vector2, IMemoryPool, EnemyUnitBasicFacade> { }

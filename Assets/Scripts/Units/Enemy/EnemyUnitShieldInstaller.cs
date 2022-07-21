@@ -13,7 +13,7 @@ namespace Assets.Scripts.Units.Enemy
 
         public override void InstallBindings()
         {
-            Container.Bind<HealthController>().AsSingle().WithArguments(settings.Health, settingsPreFab.EnemyFacade);
+            Container.BindInterfacesAndSelfTo<HealthController>().AsSingle().WithArguments(settings.Health, settingsPreFab.EnemyFacade);
             Container.BindInterfacesAndSelfTo<EnemyUnitStateController>().AsSingle();
 
             Container.Bind<EnemyUnitStateAttack>().AsSingle();
@@ -33,7 +33,7 @@ namespace Assets.Scripts.Units.Enemy
         public class SettingsPreFab
         {
             [field: SerializeField] public Transform MyTransform { private set; get; } = null;
-            [field: SerializeField] public UnitFacade EnemyFacade { private set; get; } = null;
+            [field: SerializeField] public HealthBaseFacade EnemyFacade { private set; get; } = null;
         }
 
         [System.Serializable]
