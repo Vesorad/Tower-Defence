@@ -7,7 +7,7 @@ namespace Assets.Scripts.UI
     {
         [SerializeField] private RectTransform rectTransform = null;
         [SerializeField] private CanvasGroup canvasGroup = null;
-        [SerializeField, Min(0)] private float alphaImage = 0;
+        [SerializeField, Min(0)] private float alphaImage = 0; //TODO PRZENIEŒÆ DO ISTALLERA Kiedy bedzie
 
         private Vector2 startPosition;
 

@@ -37,6 +37,8 @@ MonoBehaviour:
       <NameFolder>k__BackingField: Player Unit Basic
       <Prefab>k__BackingField: {fileID: 7606141026255071602, guid: 19e5f15feae43cd4388f0a5014f36a68, type: 3}
       <PoolSize>k__BackingField: 100
+  <RoofSettings>k__BackingField:
+    <Health>k__BackingField: 100
   <TowerBuidlingSettings>k__BackingField:
     <StartPositionRoof>k__BackingField: {x: 0, y: -1}
     <StartPositionTower>k__BackingField: {x: 0, y: -3}

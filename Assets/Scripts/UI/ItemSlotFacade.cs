@@ -1,3 +1,4 @@
+using Assets.Scripts.Signals;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Zenject;
@@ -15,13 +16,16 @@ namespace Assets.Scripts.UI
         public void Construct(SignalBus signalBus) => this.signalBus = signalBus;
 
         private void Awake() => myCanvas.worldCamera = Camera.main;
+
         public void OnDrop(PointerEventData eventData)
         {
-            signalBus.Fire(new Signals.SpawnPlayerUnitSignal()
+            signalBus.Fire(new SpawnPlayerUnitSignal()
             {
                 SpawnPos = rectTransform.position,
                 UnitType = 1
             });
         }
+
+        public void OnClickSlot() => signalBus.Fire(new SelectSlotSignal() { High = transform.position.y });
     }
 }

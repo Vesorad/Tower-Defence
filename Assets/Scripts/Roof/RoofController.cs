@@ -17,7 +17,7 @@ namespace Assets.Scripts.Roof
             this.gameManager = gameManager;
             this.healthController = healthController;
         }
-
+        
 
         public void HitRoof(int damage) => healthController.Hit(damage);
         public void UpdatePosRoof() => transform.position = gameManager.HighRoof;
