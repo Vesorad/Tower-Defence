@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Assets.Scripts.UI
+namespace UI
 {
     public class DragDropItemFacade : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         [SerializeField] private RectTransform rectTransform = null;
         [SerializeField] private CanvasGroup canvasGroup = null;
-        [SerializeField, Min(0)] private float alphaImage = 0; //TODO PRZENIEŒÆ DO ISTALLERA Kiedy bedzie
+        [SerializeField, Min(0)] private float alphaImage = 0;
 
         private Vector2 startPosition;
 
@@ -15,7 +15,7 @@ namespace Assets.Scripts.UI
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            canvasGroup.alpha = 0.6f;
+            canvasGroup.alpha = alphaImage;
             canvasGroup.blocksRaycasts = false;
         }
 

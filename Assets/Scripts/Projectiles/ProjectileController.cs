@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Projectiles
+namespace Projectiles
 {
     public class ProjectileController : ITickable
     {

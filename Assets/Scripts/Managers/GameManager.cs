@@ -1,8 +1,8 @@
-using Assets.Scripts.Tower;
+using Tower;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Managers
+namespace Managers
 {
     public class GameManager : IInitializable
     {

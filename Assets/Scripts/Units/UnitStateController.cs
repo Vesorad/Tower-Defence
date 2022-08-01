@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Zenject;
 
-namespace Assets.Scripts.Units
+namespace Units
 {
     public abstract class UnitStateController : IInitializable, ITickable, IFixedTickable
     {

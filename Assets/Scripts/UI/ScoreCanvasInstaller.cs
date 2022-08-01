@@ -1,8 +1,8 @@
-using Assets.Scripts.Signals;
+using MySignals;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.UI
+namespace UI
 {
     public class ScoreCanvasInstaller : MonoInstaller
     {

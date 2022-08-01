@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Scripts.Zenject
+namespace Zenject
 {
     [System.Serializable]
     public class ObjectPool

@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Units
+namespace Units
 {
     public enum UnitStates
     {

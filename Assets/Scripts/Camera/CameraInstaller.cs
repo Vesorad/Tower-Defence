@@ -1,8 +1,8 @@
-using Zenject;
+using MySignals;
 using UnityEngine;
-using Assets.Scripts.Signals;
+using Zenject;
 
-namespace Assets.Scripts.CameraInGame
+namespace Camera
 {
     public class CameraInstaller : MonoInstaller
     {

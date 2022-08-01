@@ -1,7 +1,7 @@
-using Assets.Scripts.Units.Player;
+using Units.Player;
 using UnityEngine;
 
-namespace Assets.Scripts.Managers
+namespace Managers
 {
     public class PlayerUnitsController
     {

@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Assets.Scripts.Tower
+namespace Tower
 {
     public class TowerInstaller : MonoInstaller
     {
@@ -13,7 +13,7 @@ namespace Assets.Scripts.Tower
 
         private void BindSignals()
         {
-            Container.BindSignal<Signals.BuildTowerSignal>().ToMethod<TowerBuidlingController>((x, s) => x.AddNewPartTower()).FromResolve();
+            Container.BindSignal<MySignals.BuildTowerSignal>().ToMethod<TowerBuidlingController>((x, s) => x.AddNewPartTower()).FromResolve();
         }
     }
 }

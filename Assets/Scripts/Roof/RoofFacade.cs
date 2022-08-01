@@ -1,8 +1,8 @@
-using Assets.Scripts.Units;
+using Units;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Roof
+namespace Roof
 {
     public class RoofFacade : HealthBaseFacade
     {
@@ -29,7 +29,7 @@ namespace Assets.Scripts.Roof
 
         public override void OnDeath()
         {
-            signalBus.Fire<Signals.EndGameSignal>();
+            signalBus.Fire<MySignals.EndGameSignal>();
         }
 
         public class Factory : PlaceholderFactory<Vector2, RoofFacade> { }

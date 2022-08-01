@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Units.Enemy.States
+namespace Units.Enemy.States
 {
     public class EnemyUnitStateAttack : IUnitState
     {

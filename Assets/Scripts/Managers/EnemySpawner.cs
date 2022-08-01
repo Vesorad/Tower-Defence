@@ -1,8 +1,8 @@
-using Assets.Scripts.Units.Enemy;
+using Units.Enemy;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Managers
+namespace Managers
 {
     public class EnemySpawner : ITickable
     {
@@ -31,7 +31,7 @@ namespace Assets.Scripts.Managers
             if (Time.time >= timeToNextSpawn)
             {
                 timeToNextSpawn = Time.time + settings.TimeToSpawn;
-                signalBus.Fire(new Signals.SpawnEnemyUnitSignal() { UnitNumber = Random.Range(0, 3) });
+                signalBus.Fire(new MySignals.SpawnEnemyUnitSignal() { UnitNumber = Random.Range(0, 3) });
             }
         }
 

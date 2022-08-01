@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.UI
+namespace UI
 {
     public class MainManuController : MonoBehaviour
     {

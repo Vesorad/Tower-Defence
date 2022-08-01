@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Projectiles
+namespace Projectiles
 {
     public class ProjectileInstaller : MonoInstaller
     {

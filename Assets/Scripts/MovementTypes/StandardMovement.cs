@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Scripts.EnemyMovementTypes
+namespace MovementTypes
 {
     [CreateAssetMenu(menuName = "ScriptableObject/Movement/Standard")]
     public class StandardMovement : EnemyMovementType

@@ -1,9 +1,8 @@
-using Assets.Scripts.Managers;
-using Assets.Scripts.Units;
+using Managers;
+using Units;
 using UnityEngine;
-using Zenject;
 
-namespace Assets.Scripts.Roof
+namespace Roof
 {
     public class RoofController
     {

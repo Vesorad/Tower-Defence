@@ -1,12 +1,11 @@
-using Assets.Scripts.Projectiles;
-using Assets.Scripts.Roof;
-using Assets.Scripts.Tower;
-using Assets.Scripts.Units.Enemy;
-using Assets.Scripts.Units.Player;
+using Projectiles;
+using Roof;
+using Tower;
+using Units.Enemy;
+using Units.Player;
 using UnityEngine;
-using Zenject;
 
-namespace Assets.Scripts.Zenject
+namespace Zenject
 {
     public class GameFactores
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Zenject;
 
-namespace Assets.Scripts.Units.Player.States
+namespace Units.Player.States
 {
     public class PlayerUnitStateController : UnitStateController
     {

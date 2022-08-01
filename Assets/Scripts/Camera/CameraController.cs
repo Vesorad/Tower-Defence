@@ -1,8 +1,8 @@
-using Assets.Scripts.Managers;
+using Managers;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.CameraInGame
+namespace Camera
 {
     public class CameraController : IInitializable, ITickable
     {
@@ -46,7 +46,7 @@ namespace Assets.Scripts.CameraInGame
         public void Tick()
         {
             if (Input.GetMouseButton(0))
-                newCameraHigh -= Input.GetAxis("Mouse Y"); //TODO zamieniæ na placel
+                newCameraHigh -= Input.GetAxis("Mouse Y"); //TODO zamieniÄ‡ na placel
 
             if (cameraTransform.position.y != newCameraHigh)
                 cameraTransform.position = new Vector3(cameraTransform.position.x, ChangeInTimePosCamera(), cameraTransform.position.z);

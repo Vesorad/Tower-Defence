@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Assets.Scripts.Units
+namespace Units
 {
     public class HealthController : IInitializable
     {

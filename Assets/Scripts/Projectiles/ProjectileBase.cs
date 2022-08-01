@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Scripts.Projectiles
+namespace Projectiles
 {
     [System.Serializable]
     public class ProjectileBase

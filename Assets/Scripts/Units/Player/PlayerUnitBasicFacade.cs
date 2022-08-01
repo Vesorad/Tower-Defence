@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Units.Player
+namespace Units.Player
 {
     public class PlayerUnitBasicFacade : HealthBaseFacade
     {

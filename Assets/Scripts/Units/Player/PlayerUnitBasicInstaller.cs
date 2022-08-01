@@ -1,10 +1,10 @@
-using Assets.Scripts.Signals;
-using Assets.Scripts.Units.Player.States;
 using System;
+using MySignals;
+using Units.Player.States;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Units.Player
+namespace Units.Player
 {
     public class PlayerUnitBasicInstaller : MonoInstaller
     {

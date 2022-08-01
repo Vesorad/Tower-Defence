@@ -1,7 +1,6 @@
 using UnityEngine;
-using Zenject;
 
-namespace Assets.Scripts.Zenject
+namespace Zenject
 {
     public class MonoPoolableMemoryPool<TParam1, TValue> : MemoryPool<TParam1, TValue> where TValue : Component, IPoolable<TParam1>
     {

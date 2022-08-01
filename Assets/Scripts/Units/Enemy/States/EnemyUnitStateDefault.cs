@@ -1,9 +1,9 @@
-using Assets.Scripts.Managers;
-using Assets.Scripts.Signals;
+using Managers;
+using MySignals;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Units.Enemy.States
+namespace Units.Enemy.States
 {
     public class EnemyUnitStateDefault : IUnitState
     {

@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Assets.Scripts.Managers
+namespace Managers
 {
     public class EnemyManagerInstaller : MonoInstaller
     {
@@ -13,7 +13,8 @@ namespace Assets.Scripts.Managers
 
         private void BindSignals()
         {
-            Container.BindSignal<Signals.SpawnEnemyUnitSignal>().ToMethod<EnemySpawner>((x, s) => x.ChooseEnemyToSpawn(s.UnitNumber)).FromResolve();
+            Container.BindSignal<MySignals.SpawnEnemyUnitSignal>().ToMethod<EnemySpawner>
+                ((x, s) => x.ChooseEnemyToSpawn(s.UnitNumber)).FromResolve();
         }
     }
 }

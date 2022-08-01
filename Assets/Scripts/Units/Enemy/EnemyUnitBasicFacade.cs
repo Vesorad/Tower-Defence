@@ -1,8 +1,7 @@
-using Assets.Scripts.Managers;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Units.Enemy
+namespace Units.Enemy
 {
     public class EnemyUnitBasicFacade : HealthBaseFacade
     {

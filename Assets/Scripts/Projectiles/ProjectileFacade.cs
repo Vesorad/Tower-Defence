@@ -1,8 +1,8 @@
-using Assets.Scripts.Units;
+using Units;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Projectiles
+namespace Projectiles
 {
     public class ProjectileFacade : MonoBehaviour, IPoolable<Vector2, ProjectileBase, IMemoryPool>
     {

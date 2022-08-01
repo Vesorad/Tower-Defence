@@ -1,9 +1,9 @@
-using Assets.Scripts.Signals;
+using MySignals;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Zenject;
 
-namespace Assets.Scripts.UI
+namespace UI
 {
     public class ItemSlotFacade : MonoBehaviour, IDropHandler
     {
@@ -15,7 +15,7 @@ namespace Assets.Scripts.UI
         [Inject]
         public void Construct(SignalBus signalBus) => this.signalBus = signalBus;
 
-        private void Awake() => myCanvas.worldCamera = Camera.main;
+        private void Awake() => myCanvas.worldCamera = UnityEngine.Camera.main;
 
         public void OnDrop(PointerEventData eventData)
         {

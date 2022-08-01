@@ -1,8 +1,7 @@
-using Assets.Scripts.Signals;
-using Assets.Scripts.Zenject;
+using MySignals;
 using Zenject;
 
-namespace Assets.Scripts.Managers
+namespace Managers
 {
     public class MainSceneInstaller : MonoInstaller
     {

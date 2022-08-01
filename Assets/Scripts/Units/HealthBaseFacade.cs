@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Units
+namespace Units
 {
     public abstract class HealthBaseFacade : MonoBehaviour, IPoolable<Vector2, IMemoryPool>
     {

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Tower
+namespace Tower
 {
 
     public class TowerOneSlotFacade : MonoBehaviour, IPoolable<IMemoryPool>

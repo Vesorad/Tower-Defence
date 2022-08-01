@@ -1,9 +1,10 @@
-using Zenject;
+using MovementTypes;
+using MySignals;
+using Units.Enemy.States;
 using UnityEngine;
-using Assets.Scripts.Units.Enemy.States;
-using Assets.Scripts.Signals;
+using Zenject;
 
-namespace Assets.Scripts.Units.Enemy
+namespace Units.Enemy
 {
     public class EnemyUnitShieldInstaller : MonoInstaller
     {
@@ -40,7 +41,7 @@ namespace Assets.Scripts.Units.Enemy
         public class Settings
         {
             [field: SerializeField, Min(1)] public int Health { private set; get; } = 1;
-            [field: SerializeField, Min(1)] public EnemyMovementTypes.EnemyMovementType MovementType { private set; get; } = null;
+            [field: SerializeField, Min(1)] public EnemyMovementType MovementType { private set; get; } = null;
             [field: SerializeField, Min(0.1f)] public float Speed { private set; get; } = 0.1f;
             [field: SerializeField, Min(1)] public int DamageOnRoof { private set; get; } = 1;
         }

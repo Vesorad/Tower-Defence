@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Scripts.EnemyMovementTypes
+namespace MovementTypes
 {
     public abstract class EnemyMovementType : ScriptableObject
     {

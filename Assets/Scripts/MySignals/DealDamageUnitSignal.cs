@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Signals
+namespace MySignals
 {
     public class DealDamageUnitSignal
     {

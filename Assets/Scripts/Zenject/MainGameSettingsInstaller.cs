@@ -1,10 +1,9 @@
-using Assets.Scripts.Managers;
-using Assets.Scripts.Units.Enemy;
-using Assets.Scripts.Units.Player;
+using Managers;
+using Units.Enemy;
+using Units.Player;
 using UnityEngine;
-using Zenject;
 
-namespace Assets.Scripts.Zenject
+namespace Zenject
 {
     [CreateAssetMenu(menuName = "SettingsInstaller/Game Settings")]
     public class MainGameSettingsInstaller : ScriptableObjectInstaller<MainGameSettingsInstaller>

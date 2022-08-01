@@ -1,9 +1,9 @@
-using Assets.Scripts.Managers;
-using Assets.Scripts.Roof;
+using Managers;
+using Roof;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Scripts.Tower
+namespace Tower
 {
     public class TowerBuidlingController : IInitializable
     {
